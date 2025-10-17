@@ -79,6 +79,7 @@ body {
 
 /* 🪩 Glass Container */
 .glass-card {
+  position: relative;
   background: rgba(255, 255, 255, 0.25);
   border-radius: 35px;
   backdrop-filter: blur(20px);
@@ -87,16 +88,17 @@ body {
   width: 80%;
   max-width: 1100px;
   padding: 40px 70px;
-  margin: -85px auto 0; /* replaces transform */
+  margin: -85px auto 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: margin 0.6s ease-in-out;
+
+  transition: none !important;
+  transform: none !important;
   z-index: 4;
 }
 
-
-
+/* ✨ Light gradient overlay */
 .glass-card::before {
   content: "";
   position: absolute;
@@ -109,10 +111,13 @@ body {
   pointer-events: none;
 }
 
+
 .glass-card:hover {
-  box-shadow: 0 8px 60px rgba(180, 120, 200, 0.3);
-  transform: scale(1.02);
+  transform: none !important;
+  margin: -85px auto 0 !important;
+  box-shadow: 0 40px 90px rgba(180, 46, 46, 0.15) !important;
 }
+
 
 /* ✨ Hero Content - Left Stick */
 .hero-content {
