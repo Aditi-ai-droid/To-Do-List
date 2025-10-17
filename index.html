@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aditi’s Task Manager</title>
+
+  <!-- 🌈 Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- ✨ Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 🌸 Glass Navbar -->
+<div class="simple-nav">
+  <span class="brand">🌸 My Productivity Hub</span>
+  <p class="tagline">Organize · Focus · Achieve</p>
+</div>
+
+
+
+  <!-- 💫 Glass Homepage -->
+  <section class="hero" id="heroSection">
+    <div class="glass-card">
+      <div class="hero-content">
+        <!-- ✨ Text Section with Decorative Icons -->
+        <div class="text">
+          <h1><i class="fa-solid fa-seedling"></i> Welcome 👋</h1>
+          <p>Let’s turn ideas into action and tasks into success</p>
+          <span class="quote"><i class="fa-solid fa-quote-left"></i> Productivity with peace <i class="fa-solid fa-quote-right"></i></span>
+          <br><br>
+          <button class="btn-start" id="startBtn">Start Managing Tasks</button>
+        </div>
+
+        <!-- 🌸 Image Section with Floating Icons -->
+        <div class="image">
+          <img src="img.png" alt="Planner Icon">
+          <div class="floating-icons">
+            <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-moon"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🗒️ To-Do List Section -->
+  <div class="container hidden" id="tasksSection">
+    <h1>📝 To Do List</h1>
+    <p id="date"></p>
+
+    <!-- 🌸 Dashboard Overview Section -->
+    <div class="dashboard-overview">
+      <!-- 🌷 Progress Card -->
+      <div class="overview-card progress-card">
+        <div class="progress-circle">
+          <svg>
+            <circle cx="60" cy="60" r="54"></circle>
+            <circle cx="60" cy="60" r="54" id="progressValue"></circle>
+          </svg>
+          <div class="progress-number" id="progressPercent">44%</div>
+        </div>
+        <p>Overall Progress</p>
+      </div>
+
+      <!-- 📊 Priority Distribution -->
+      <div class="overview-card">
+        <h3>Priority</h3>
+        <div class="bar low"><span style="width: 50%"></span></div>
+        <div class="bar medium"><span style="width: 30%"></span></div>
+        <div class="bar high"><span style="width: 20%"></span></div>
+      </div>
+
+      <!-- 📋 Status Summary -->
+      <div class="overview-card">
+        <h3>Status</h3>
+        <p><strong>Done:</strong> 8</p>
+        <p><strong>Pending:</strong> 10</p>
+        <p><strong>Cancelled:</strong> 2</p>
+      </div>
+
+      <!-- 🧩 Categories Summary -->
+      <div class="overview-card">
+        <h3>Categories</h3>
+        <p>Personal: 2</p>
+        <p>Business: 1</p>
+        <p>Wellness: 4</p>
+        <p>Family: 3</p>
+      </div>
+    </div>
+
+    <!-- 🌸 Input Section -->
+    <div class="input-section">
+      <input type="text" id="taskInput" placeholder="Enter your task...">
+      <select id="prioritySelect">
+        <option value="Low">Low</option>
+        <option value="Medium" selected>Medium</option>
+        <option value="High">High</option>
+      </select>
+      <button id="addBtn">Add</button>
+    </div>
+
+    <!-- 🧾 Task Table -->
+    <table id="taskTable">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Task</th>
+          <th>Priority</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="taskBody"></tbody>
+    </table>
+
+    <p class="info">💾 Tasks are auto-saved in your browser (localStorage)</p>
+  </div>
+
+  <!-- 💫 Script for Dynamic Progress -->
+ <!-- 💫 Animated Progress Circle -->
+<script>
+  window.addEventListener("load", () => {
+    const progressCircle = document.getElementById("progressValue");
+    const progressText = document.getElementById("progressPercent");
+
+    const targetPercent = 44; // your actual progress value
+    const circumference = 2 * Math.PI * 54;
+    let current = 0;
+
+    const animate = () => {
+      if (current <= targetPercent) {
+        const offset = circumference - (circumference * current) / 100;
+        progressCircle.style.strokeDashoffset = offset;
+        progressText.textContent = `${current}%`;
+        current++;
+        requestAnimationFrame(animate);
+      }
+    };
+
+    // initialize circle
+    progressCircle.style.strokeDasharray = circumference;
+    progressCircle.style.strokeDashoffset = circumference;
+
+    animate();
+  });
+</script>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
