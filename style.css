@@ -1,6 +1,6 @@
 /* 🌈 Background Gradient */
 body {
-  background: radial-gradient(circle at top left, #8a798b 0%, #8a798b 40%, #2c1019 100%);
+  background: radial-gradient(circle at top left, #c09fff 0%, #f6a8cf 40%, #ffe6f3 100%);
   font-family: "Poppins", sans-serif;
   margin: 0;
   scroll-behavior: smooth;
@@ -10,7 +10,7 @@ body {
 .simple-nav {
   text-align: center;
   margin-top: 25px;
-  color: #f5f4f4;
+  color: #cf1e1e;
   font-family: "Poppins", sans-serif;
 }
 
@@ -19,12 +19,12 @@ body {
   font-size: 22px;
   font-weight: 600;
   color: #010101;
-  text-shadow: 0 0 10px rgba(255, 220, 250, 0.4);
+  text-shadow: 0 0 10px rgba(166, 153, 164, 0.4);
   margin-bottom: 5px;
 }
 
 .simple-nav .nav-links a {
-  color: #1b0116;
+  color: #872574;
   text-decoration: none;
   margin: 0 5px;
   font-weight: 500;
@@ -32,11 +32,11 @@ body {
 }
 
 .simple-nav .nav-links a:hover {
-  color: #ffb6da;
+  color: #6c304e;
   text-shadow: 0 0 10px rgba(255, 180, 230, 0.6);
 }
 .tagline {
-  color: #f7d4f2;
+  color: #1c110d;
   font-size: 13px;
   margin: 2px 0 8px;
   letter-spacing: 1px;
@@ -48,7 +48,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start; /* aligns to top instead of perfect center */
-  background: linear-gradient(135deg, #8a798b, #2c1019);
+  background: linear-gradient(135deg, #d7caff, #ffc6e4);
   position: relative;
   overflow: hidden;
   padding: 120px 20px 60px; /* top padding increased for header space */
@@ -80,11 +80,11 @@ body {
 /* 🪩 Glass Container */
 .glass-card {
   position: relative;
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255,255,255,0.35);
   border-radius: 35px;
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 40px 90px rgba(180, 46, 46, 0.15);
+  border: 1px solid rgba(255,255,255,0.5);
+  box-shadow: 0 40px 90px rgba(157,110,255,0.25);
   width: 80%;
   max-width: 1100px;
   padding: 40px 70px;
@@ -151,13 +151,13 @@ body {
   font-family: "Playfair Display", serif;
   font-weight: 800;
   margin-bottom: 10px;
-  background: linear-gradient(90deg, #940556, #0d0d0e);
+  background: linear-gradient(90deg, #b73a81, #0d0d0e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .hero-content .text p {
-  color: #f4f1f3;
+  color: #070707;
   font-size: 18px;
   margin-bottom: 25px;
   font-weight: 400;
@@ -166,7 +166,7 @@ body {
 .quote {
   display: block;
   margin-top: 10px;
-  color: #ebe6ec;
+  color: #3b0446;
   font-style: italic;
   font-size: 14px;
 }
@@ -266,7 +266,7 @@ body {
 }
 
 .container {
- background: linear-gradient(135deg, #fdf0ff, #6a436b);
+ background: linear-gradient(135deg, #efe7ff, #ffd7ec);
  backdrop-filter: blur(10px);
 border: 1px solid rgba(255, 255, 255, 0.4);
   width: 90%;
@@ -471,3 +471,16 @@ th { background-color: #f9e3ef; }
     padding: 15px;
   }
 }
+.save-btn { 
+  background: #c8f7c5; 
+  color:#145214;
+}
+.cancel-btn { 
+  background:#ffd1d1; 
+  color:#7b0000;
+}
+.save-btn:hover,
+.cancel-btn:hover {
+  transform: scale(1.05);
+}
+
